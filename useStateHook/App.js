@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import {Button, SafeAreaView} from 'react-native';
+import Box from './components/Box';
 
-export default function App() {
+const App = () => {
+  const [visible, setVisible] = useState(true);
+  const onPress = () => {
+      setVisible(!visible);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+      <SafeAreaView>
+          <Button title="토글" onPress={onPress} />
+          {visible ? <Box rounded={true} size="large" color="pink" /> : null}
+      </SafeAreaView>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
