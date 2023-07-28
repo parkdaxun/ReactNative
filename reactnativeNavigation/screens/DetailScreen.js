@@ -11,6 +11,7 @@ function DetailScreen({route}) {
 
 const styles = StyleSheet.create({
     block: {
+        backgroundColor: 'white',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',

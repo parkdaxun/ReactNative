@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Button} from 'react-native';
+import {View, Button, StyleSheet} from 'react-native';
 
 function HomeScreen({navigation}) {
     return (
-        <View>
+        <View style={styles.background}>
             <Button
                 title="Detail 1 열기"
                 onPress={() => navigation.navigate('Detail', {id: 1})}
@@ -19,5 +19,11 @@ function HomeScreen({navigation}) {
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    background: {
+        backgroundColor: 'white',
+    },
+})
 
 export default HomeScreen;
