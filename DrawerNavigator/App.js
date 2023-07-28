@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createDrawerNavigator} from "@react-navigation/drawer";
+import {View, Text, Button} from 'react-native';
 
-export default function App() {
+const Drawer = createDrawerNavigator();
+
+function HomeScreen({navigation}) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <View>
+        <Text>Home</Text>
+        <Button title="Drawer 열기" onPress={() => navigation.openDrawer()} />
+        <Button title="Setting 열기" onPress={() => navigation.navigate('Setting')} />
+      </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function SettingScreen({navigation}) {
+  return (
+      <View>
+        <Text>Setting</Text>
+        <Button title="뒤로가기" onPress={() => navigation.canGoBack()} />
+      </View>
+  );
+}
+
+function App() {
+  return (
+      <NavigationContainer>
+        <Drawer.Navigator
+          initialRouteName="Home"
+          drawerPosition="left"
+          backDehavior="history">
+          <Drawer.Screen name="Home" component={HomeScreen} />
+          <Drawer.Screen name="Setting" component={SettingScreen} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+  )
+}
+
+export default App;
