@@ -13,7 +13,7 @@ function HomeScreen({navigation}) {
         <Button title="Setting 열기" onPress={() => navigation.navigate('Setting')} />
       </View>
   );
-}
+};
 
 function SettingScreen({navigation}) {
   return (
@@ -22,7 +22,7 @@ function SettingScreen({navigation}) {
         <Button title="뒤로가기" onPress={() => navigation.canGoBack()} />
       </View>
   );
-}
+};
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
           <Drawer.Screen name="Setting" component={SettingScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
-  )
-}
+  );
+};
 
 export default App;
