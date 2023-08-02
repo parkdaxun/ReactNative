@@ -27,3 +27,8 @@ Drawer Navigator
 <h3>2023.07.31</h3>
 
 Drawer Navigator 2
+<br />
+<br />
+<h3>2023.08.02</h3>
+
+Bottom Tab Navigator
