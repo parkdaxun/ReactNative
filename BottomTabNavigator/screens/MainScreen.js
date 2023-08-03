@@ -63,6 +63,7 @@ function MainScreen() {
                     tabBarIcon: ({color, size}) => (
                         <Icon name="search" color={color} size={size} />
                     ),
+                    tabBarBadge: true,
                 }}
             />
             <Tab.Screen
