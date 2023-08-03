@@ -29,7 +29,7 @@ function App() {
         <Tab.Navigator
             initialRouteName="Home"
             tabBarOptions={{
-                activeTintColor: "#3e6533",
+                activeTintColor: "#45549b",
                 showLabel: true,
             }}>
           <Tab.Screen
