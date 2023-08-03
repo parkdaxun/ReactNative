@@ -32,3 +32,8 @@ Drawer Navigator 2
 <h3>2023.08.02</h3>
 
 Bottom Tab Navigator
+<br />
+<br />
+<h3>2023.08.03</h3>
+
+Bottom Tab Navigator tabBarBadge
