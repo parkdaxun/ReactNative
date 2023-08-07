@@ -1,22 +1,37 @@
-import React, {useRef, useState} from 'react';
-import {StyleSheet, Text, View, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
+import React, {useState} from 'react';
+import {Alert, StyleSheet, Text, View, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
 import {SafeAreaView} from "react-native-safe-area-context";
 import SignButtons from '../components/SignButton';
 import SignInForm from "../components/SignInForm";
+import {signIn, signUp} from '../lib/auth';
 
-function SignInScreen({navigation, route}) {
+function SignInScreen({route}) {
     const {isSignUp} = route.params ?? {};
     const [form, setForm] = useState({
         email: '',
         password: '',
         confirmPassword: '',
     });
+    const [loading, setLoading] = useState();
+
     const createChangeTextHandler = (name) => (value) => {
         setForm({...form, [name]: value});
     };
-    const onSubmit = () => {
+
+    const onSubmit = async () => {
         Keyboard.dismiss();
-        console.log(form);
+        const {email, password} = form;
+        const info = {email, password};
+        setLoading(true);
+        try {
+            const {user} = isSignUp ? await signUp(info) : await signIn(info);
+            console.log(user);
+        } catch(e) {
+            Alert.alert('실패');
+            console.log(e);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -32,7 +47,7 @@ function SignInScreen({navigation, route}) {
                         form={form}
                         createChangeTextHandler={createChangeTextHandler}
                     />
-                    <SignButtons isSignUp={isSignUp} onSubmit={onSubmit} />
+                    <SignButtons isSignUp={isSignUp} onSubmit={onSubmit} loading={loading}/>
                 </View>
             </SafeAreaView>
         </KeyboardAvoidingView>
