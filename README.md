@@ -37,3 +37,8 @@ Bottom Tab Navigator
 <h3>2023.08.03</h3>
 
 Bottom Tab Navigator tabBarBadge
+<br />
+<br />
+<h3>2023.08.07</h3>
+
+PublicGalleryDaeun - Firebase로 이미지를 공유하는 앱 
