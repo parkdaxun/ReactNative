@@ -3,7 +3,7 @@ import {StyleSheet, View, Pressable, Text, Platform} from 'react-native';
 
 function CustomButton({onPress, title, hasMarginBottom}) {
     return (
-        <View style={[styles.block, styles.overflow, styles.hasMarginBottom && styles.margin]}>
+        <View style={[styles.block, styles.overflow, hasMarginBottom && styles.margin]}>
             <Pressable
                 onPress={onPress}
                 style={({pressed}) => [
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         height: 48,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#6200ee',
+        backgroundColor: '#9e76d7',
     },
 
     text: {
