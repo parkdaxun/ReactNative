@@ -42,3 +42,5 @@ Bottom Tab Navigator tabBarBadge
 <h3>2023.08.07</h3>
 
 PublicGalleryDaeun - Firebase로 이미지를 공유하는 앱 
+<br />
+SignUpScreen, SignInScreen, 컴포넌트 분리
