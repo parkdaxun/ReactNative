@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {StyleSheet, Text, View, Keyboard, KeyboardAvoidingView, Platform} from 'react-native';
 import {SafeAreaView} from "react-native-safe-area-context";
 import BorderedInput from "../components/BorderedInput";
@@ -19,6 +19,9 @@ function SignInScreen({navigation, route}) {
         console.log(form);
     };
 
+    const passwordRef = useRef();
+    const confirmPasswordRef = useRef();
+
     return (
         <KeyboardAvoidingView
             style={styles.KeyboardAvoidingView}
@@ -35,12 +38,23 @@ function SignInScreen({navigation, route}) {
                         autoCorrect={false}
                         autoCompleteType="email"
                         keyboardType="email-address"
+                        returnKeyType="next"
+                        onSubmitEditing={() => passwordRef.current.focus()}
                     />
                     <BorderedInput
                         placeholder="비밀번호"
                         hasMarginBottom={isSignUp}
                         value={form.password}
                         onChangeText={createChangeTextHandler('password')}
+                        ref={passwordRef}
+                        returnKeyType={isSignUp ? 'next' : 'done'}
+                        onSubmitEditing={() => {
+                            if (isSignUp) {
+                                confirmPasswordRef.current.focus();
+                            } else {
+                                onSubmit();
+                            }
+                        }}
                         secureTextEntry
                     />
                     {isSignUp &&
@@ -48,6 +62,9 @@ function SignInScreen({navigation, route}) {
                             placeholder="비밀번호 확인"
                             value={form.confirmPassword}
                             onChangeText={createChangeTextHandler('confirmPassword')}
+                            ref={confirmPasswordRef}
+                            returnKeyType="done"
+                            onSubmitEditing={onSubmit}
                             secureTextEntry
                         />}
                     <View style={styles.buttons}>
