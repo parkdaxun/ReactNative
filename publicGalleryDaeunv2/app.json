@@ -1,8 +1,7 @@
 {
   "expo": {
-    "plugins": "@react-native-firebase/app",
-    "name": "publicGalleryDaeun",
-    "slug": "publicGalleryDaeun",
+    "name": "publicGalleryDaeunv2",
+    "slug": "publicGalleryDaeunv2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,15 +15,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.parkde0207.publicGalleryDaeun"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.parkde0207.publicGalleryDaeun"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

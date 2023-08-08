@@ -1,5 +1,4 @@
 import React, {useRef} from 'react';
-import BorderInput from './BorderedInput';
 import BorderedInput from "./BorderedInput";
 
 function SignInForm({isSignUp, onSubmit, form, createChangeTextHandler}) {

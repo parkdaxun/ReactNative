@@ -47,7 +47,11 @@ function SignInScreen({route}) {
                         form={form}
                         createChangeTextHandler={createChangeTextHandler}
                     />
-                    <SignButtons isSignUp={isSignUp} onSubmit={onSubmit} loading={loading}/>
+                    <SignButtons
+                        isSignUp={isSignUp}
+                        onSubmit={onSubmit}
+                        loading={loading}
+                    />
                 </View>
             </SafeAreaView>
         </KeyboardAvoidingView>
