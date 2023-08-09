@@ -12,7 +12,7 @@ function MainTab() {
         <Tab.Navigator
             tabBarOptions={{
                 showLabel: false,
-                activeTintColor: '#e7620d',
+                activeTintColor: '#1c4811',
             }}
         >
             <Tab.Screen
