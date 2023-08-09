@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
-import TransparentCirecleButton from "./TransparentCirecleButton";
+import {StyleSheet, View} from 'react-native';
+import TransparentCircleButton from "./TransparentCircleButton";
 
-function WriteHeader() {
+function WriteHeader({onSave}) {
     const navigation = useNavigation();
     const onGoBack = () => {
         navigation.pop();
@@ -12,20 +12,24 @@ function WriteHeader() {
     return (
         <View style={styles.block}>
             <View style={styles.iconButtonWrapper}>
-                <TransparentCirecleButton
+                <TransparentCircleButton
                     onPress={onGoBack}
                     name="arrow-back"
                     color="#424242"
                 />
             </View>
             <View style={styles.buttons}>
-                <TransparentCirecleButton
+                <TransparentCircleButton
                     onPress={onGoBack}
                     name="delete-forever"
                     color="#ef5350"
                     hasMarginRight
                 />
-                <TransparentCirecleButton name="check" color="#1c4811" />
+                <TransparentCircleButton
+                    name="check"
+                    color="#1c4811"
+                    onPress={onSave}
+                />
             </View>
         </View>
     );
