@@ -51,3 +51,8 @@ SignUpScreen, SignInScreen, 컴포넌트 분리
 PublicGalleryDaeun - Error 해결 중
 <br />
 CalendarView
+<br />
+<br />
+<h3>2023.08.09</h3>
+
+DayLog 1일차
