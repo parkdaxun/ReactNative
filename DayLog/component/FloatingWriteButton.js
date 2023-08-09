@@ -1,8 +1,15 @@
 import React from 'react';
 import {Pressable, View, StyleSheet, Platform} from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import {useNavigation} from "@react-navigation/native";
 
 function FloatingWriteButton() {
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        navigation.navigate('Write');
+    }
+
     return(
         <View style={styles.wrapper}>
             <Pressable
@@ -12,7 +19,7 @@ function FloatingWriteButton() {
                         opacity : pressed ? 0.6 : 1,
                     },
                 ]}
-            >
+                onPress={onPress}>
                 <Icon name="add" size={24} style={styles.icon} />
             </Pressable>
         </View>
