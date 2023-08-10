@@ -19,7 +19,7 @@ function FeedListItem({log}) {
                 styles.block,
                 Platform.OS === 'ios' && pressed && {backgroundColor : '#efefef'},
             ]}>
-            <Text style={styles.date}>{new Date(date).toLocalString()}</Text>
+            <Text style={styles.date}>{new Date(date).toLocaleString()}</Text>
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.body}>{body}</Text>
         </Pressable>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     date : {
         fontSize : 12,
         color : '#546e7a',
+        marginBottom : 8,
     },
 
     title : {
