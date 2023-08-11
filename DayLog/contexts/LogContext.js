@@ -44,7 +44,7 @@ export function LogContextProvider({children}) {
     };
 
     return (
-        <LogContext.Provider value={{logs, onCreate}}>
+        <LogContext.Provider value={{logs, onCreate, onModify}}>
             {children}
         </LogContext.Provider>
     );

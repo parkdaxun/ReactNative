@@ -9,15 +9,24 @@ function WriteScreen({route}) {
     const log = route.params?.log;
     const [title, setTitle] = useState(log?.title ?? '');
     const [body, setBody] = useState(log?.body ?? '');
-    const {onCreate} = useContext(LogContext);
     const navigation = useNavigation();
 
+    const {onCreate, onModify} = useContext(LogContext);
     const onSave = () => {
-        onCreate({
-            title,
-            body,
-            date : new Date().toISOString(),
-        });
+        if(log) {
+            onModify({
+                id : log.id,
+                date : log.date,
+                title,
+                body,
+            });
+        } else {
+            onCreate({
+                title,
+                body,
+                date: new Date().toISOString(),
+            });
+        }
         navigation.pop();
     };
     return (
