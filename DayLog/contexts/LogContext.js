@@ -27,6 +27,12 @@ export function LogContextProvider({children}) {
     ]);
 
     const onCreate = ({title, body, date}) => {
+        const log = {
+            id : uuidv4(),
+            title,
+            body,
+            date,
+        };
         setLogs([log, ...logs]);
     };
 
