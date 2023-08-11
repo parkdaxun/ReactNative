@@ -26,6 +26,13 @@ export function LogContextProvider({children}) {
         },
     ]);
 
+    const onModify = (modified) => {
+        const nextLogs = logs.map((log) =>
+            log.id === modified.id ? modified : log,
+        );
+        setLogs(nextLogs);
+    };
+
     const onCreate = ({title, body, date}) => {
         const log = {
             id : uuidv4(),
