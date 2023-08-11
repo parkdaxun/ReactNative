@@ -5,9 +5,10 @@ import WriteEditor from "../component/WriteEditor";
 import {useNavigation} from "@react-navigation/native";
 import LogContext from "../contexts/LogContext";
 
-function WriteScreen() {
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
+function WriteScreen({route}) {
+    const log = route.params?.log;
+    const [title, setTitle] = useState(log?.title ?? '');
+    const [body, setBody] = useState(log?.body ?? '');
     const {onCreate} = useContext(LogContext);
     const navigation = useNavigation();
 
