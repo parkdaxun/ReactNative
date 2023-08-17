@@ -3,7 +3,6 @@ import {Calendar} from 'react-native-calendars';
 import {StyleSheet} from "react-native";
 
 function CalendarView({markedDates, selectedDate, onSelectDate}) {
-
     const markedSelectedDate = {
         ...markedDates,
         [selectedDate]: {
@@ -16,14 +15,14 @@ function CalendarView({markedDates, selectedDate, onSelectDate}) {
       <Calendar
           style={styles.calendar}
           markedDates={markedSelectedDate}
-          onDayPress={(day) => {
-              onSelectDate(day.dateString);
-          }}
           theme={{
               selectedDayBackgroundColor : '#1c4811',
               arrowColor : '#1c4811',
               dotColor : '#1c4811',
               todayTextColor : '#1c4811',
+          }}
+          onDayPress={(day) => {
+              onSelectDate(day.dateString);
           }}
       />
     );
