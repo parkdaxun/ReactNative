@@ -1,25 +1,28 @@
-import React, {useContext, useState} from 'react';
-import {StyleSheet} from "react-native";
-import LogContext from "../contexts/LogContext";
-import CalendarView from "../component/CalendarView";
 import {format} from 'date-fns';
+import React, {useContext, useMemo, useState} from 'react';
+import CalendarView from '../component/CalendarView';
 import FeedList from '../component/FeedList';
+import LogContext from '../contexts/LogContext';
 
 function CalendarScreen() {
     const {logs} = useContext(LogContext);
     const [selectedDate, setSelectedDate] = useState(
-        format(new Date(), 'yyyy-mm-dd'),
+        format(new Date(), 'yyyy-MM-dd'),
+    );
+
+    const markedDates = useMemo(
+        () =>
+            logs.reduce((acc, current) => {
+                const formattedDate = format(new Date(current.date), 'yyyy-MM-dd');
+                acc[formattedDate] = {marked: true};
+                return acc;
+            }, {}),
+        [logs],
     );
 
     const filteredLogs = logs.filter(
-        (log) => format(new Date(log.date), 'yyyy-mm-dd') === selectedDate,
-    )
-
-    const markedDates = logs.reduce((acc, current) => {
-        const formattedDate = format(new Date(current.date), 'yyyy-mm-dd');
-        acc[formattedDate] = {marked: true};
-        return acc;
-    }, {});
+        log => format(new Date(log.date), 'yyyy-MM-dd') === selectedDate,
+    );
 
     return (
         <FeedList
@@ -34,9 +37,5 @@ function CalendarScreen() {
         />
     );
 }
-
-const styles = StyleSheet.create({
-    block: {},
-});
 
 export default CalendarScreen;
