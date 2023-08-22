@@ -6,7 +6,7 @@ const LogContext = createContext();
 
 export function LogContextProvider({children}) {
     const [logs, setLogs] = useState([
-        {
+        /*{
             id : uuidv4(),
             title : 'Log 03',
             body : 'Log 03',
@@ -23,7 +23,7 @@ export function LogContextProvider({children}) {
             title : 'Log 01',
             body : 'Log 01',
             date : new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(),
-        },
+        }, */
     ]);
 
     const onModify = (modified) => {
