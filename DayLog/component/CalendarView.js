@@ -19,10 +19,10 @@ function CalendarView({markedDates, selectedDate, onSelectDate}) {
               onSelectDate(day.dateString);
           }}
           theme={{
-              selectedDayBackgroundColor : '#1c4811',
-              arrowColor : '#1c4811',
-              dotColor : '#1c4811',
-              todayTextColor : '#1c4811',
+              selectedDayBackgroundColor : '#000000',
+              arrowColor : '#000000',
+              dotColor : '#000000',
+              todayTextColor : '#000000',
           }}
       />
     );
