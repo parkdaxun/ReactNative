@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from "react-native";
 import SearchContext from "../contexts/SearchContext";
 import FeedList from "../component/FeedList";
 import LogContext from "../contexts/LogContext";
+import EmptySearchResult from "../component/EmptySearchResult";
 
 function SearchScreen() {
     const {keyword} = useContext(SearchContext);
@@ -14,6 +15,14 @@ function SearchScreen() {
             : logs.filter((log) =>
                 [log.title, log.body].some((text) => text.includes(keyword)),
             );
+
+    if(keyword === '') {
+        return <EmptySearchResult type="EMPTY_KEYWORD" />;
+    }
+
+    if(filtered.length === 0) {
+        return <EmptySearchResult type="NOT_FOUND" />;
+    }
 
     return (
         <View style={styles.block}>
