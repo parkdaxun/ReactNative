@@ -53,26 +53,5 @@ PublicGalleryDaeun - Error 해결 중
 CalendarView
 <br />
 <br />
-<h3>2023.08.09</h3>
-
-DayLog 1일차
-<br />
-<br />
-<h3>2023.08.10</h3>
-
-DayLog 2일차
-<br />
-<br />
-<h3>2023.08.11</h3>
-
-DayLog 3일차
-<br />
-<br />
-<h3>2023.08.16</h3>
-
-DayLog 4일차
-<br />
-<br />
-<h3>2023.08.17</h3>
-
-DayLog 5일차
+<h3>2023.08.09 ~ </h3>
+DayLog 개발
