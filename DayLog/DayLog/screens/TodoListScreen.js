@@ -1,11 +1,16 @@
 import React from 'react';
-import {View} from "react-native";
+import {View, StyleSheet} from "react-native";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+import DateHead from "../component/DateHead";
 
 function TodoListScreen() {
-    return (
-        <View>
+    const today = new Date();
+    console.log(today);
 
-        </View>
+    return (
+        <SafeAreaProvider>
+            <DateHead date={today}/>
+        </SafeAreaProvider>
     );
 }
 
