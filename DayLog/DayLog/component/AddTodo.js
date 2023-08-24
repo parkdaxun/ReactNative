@@ -13,10 +13,11 @@ import TransparentCircleButton from "./TransparentCircleButton";
 import FloatingWriteButton from "./FloatingWriteButton";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-function AddTodo() {
+function AddTodo({onInsert}) {
     const [text, setText] = useState('');
 
     const onPress = () => {
+        onInsert(text);
         setText('');
         Keyboard.dismiss();
     }
