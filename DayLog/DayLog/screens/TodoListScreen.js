@@ -20,7 +20,6 @@ function TodoListScreen() {
             <SafeAreaView edges={['bottom']} style={styles.block}>
                 <DateHead date={today}/>
                 {todos.length === 0 ? <Empty /> : <TodoList todos={todos} />}
-                <Empty />
                 <AddTodo />
             </SafeAreaView>
         </SafeAreaProvider>
