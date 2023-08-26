@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, Pressable} from 'react-native';
-import TransparentCircleButton from "./TransparentCircleButton";
+import TransparentCircleButton from "./Feed/TransparentCircleButton";
 import {format} from 'date-fns';
 import {ko} from 'date-fns/locale';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';

@@ -1,7 +1,7 @@
 import {format} from 'date-fns';
 import React, {useContext, useMemo, useState} from 'react';
 import CalendarView from '../component/CalendarView';
-import FeedList from '../component/FeedList';
+import FeedList from '../component/Feed/FeedList';
 import LogContext from '../contexts/LogContext';
 
 function CalendarScreen() {

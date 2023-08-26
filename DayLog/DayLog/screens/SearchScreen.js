@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import {StyleSheet, Text, View} from "react-native";
 import SearchContext from "../contexts/SearchContext";
-import FeedList from "../component/FeedList";
+import FeedList from "../component/Feed/FeedList";
 import LogContext from "../contexts/LogContext";
-import EmptySearchResult from "../component/EmptySearchResult";
+import EmptySearchResult from "../component/Search/EmptySearchResult";
 
 function SearchScreen() {
     const {keyword} = useContext(SearchContext);

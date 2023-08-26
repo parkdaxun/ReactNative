@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Pressable, TextInput, StyleSheet, View, useWindowDimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import SearchContext from "../contexts/SearchContext";
+import SearchContext from "../../contexts/SearchContext";
 
 function SearchHeader() {
     const {width} = useWindowDimensions();

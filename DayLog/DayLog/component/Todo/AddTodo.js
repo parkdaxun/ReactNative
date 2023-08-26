@@ -9,8 +9,8 @@ import {
     TouchableNativeFeedback,
     Keyboard
 } from "react-native";
-import TransparentCircleButton from "./TransparentCircleButton";
-import FloatingWriteButton from "./FloatingWriteButton";
+import TransparentCircleButton from "../Feed/TransparentCircleButton";
+import FloatingWriteButton from "../Feed/FloatingWriteButton";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 function AddTodo({onInsert}) {
