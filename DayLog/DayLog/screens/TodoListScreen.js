@@ -36,7 +36,7 @@ function TodoListScreen() {
             todo.id === id ? {...todo, done : !todo.done} : todo,
         );
         setTodos(nextTodos);
-    }
+    };
 
     return (
         <SafeAreaProvider>
